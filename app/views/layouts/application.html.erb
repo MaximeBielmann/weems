@@ -1,14 +1,110 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Weems</title>
     <%= csrf_meta_tags %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <script src="https://kit.fontawesome.com/cd87700fc7.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
+  <body id="top">
+    <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+    
+
+<div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+
+    <!-- NAVBAR -->
+    <header class="site-navbar mt-3">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="site-logo col-6">
+            <%= image_tag "logo.png", height: 64 %>
+          </div>
+
+          <nav class="mx-auto site-navigation">
+            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+              <li><a href="index.html" class="nav-link active">Accueil</a></li>
+              <li><a href="about.html">Emplois</a></li>
+              <li><a href="about.html">Contact</a></li>
+            </ul>
+          </nav>
+          
+          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+            <div class="ml-auto">
+              <a href="post-job.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Envoyer CV</a>
+            </div>
+            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+          </div>
+
+        </div>
+      </div>
+    </header>
+    
+    
     <%= yield %>
+    
+    <footer class="site-footer">
+
+      <a href="#top" class="smoothscroll scroll-top">
+        <span class="icon-keyboard_arrow_up"></span>
+      </a>
+
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col-12 col-md-4 mb-4 mb-md-0">
+            <h3>A propos</h3>
+            <p>Spécialistes par choix, nous maîtrisons les spécifités du marché ainsi que les attentes des différents acteurs du secteur.</p>
+            <p>Weems & Associates Construction est un cabinet de recrutement intervenant sur les métiers de la construction dans la zone Benelux.</p>
+            <p>Notre objectif principal est d’offrir à nos clients un service de qualité, répondant à leurs besoins en recrutement. La finalité étant de développer une relation pérenne avec nos partenaires...</p>
+          </div>
+          <div class="col-12 col-md-4 mb-4 mb-md-0">
+            <h3>Cadidats</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Emplois</a></li>
+              <li><a href="#">Envoyer un CV</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 mb-4 mb-md-0">
+            <h3>Entreprises</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row text-center">
+          <div class="col-12">
+            <div class="footer-social">
+              <a href="#"><span class="icon-facebook"></span></a>
+              <a href="#"><span class="icon-twitter"></span></a>
+              <a href="#"><span class="icon-linkedin"></span></a>
+            </div>
+            <p class="copyright"><small>
+              Créé pour Weems Builder par <a href="https://lewys.io" target="_blank">lewys.io</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
