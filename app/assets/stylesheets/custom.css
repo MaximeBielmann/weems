@@ -1,0 +1,32 @@
+.bg-light {
+    background-color: #fff !important;
+}
+.btn.btn-outline-white {
+    background: transparent;
+    border-width: 2px;
+    border-color: #7f848c;
+    color: #7f848c;
+}
+
+.btn.btn-outline-white:hover {
+    background: transparent;
+    border-width: 2px;
+    border-color: #89ba16;
+    color: #89ba16;
+}
+
+
+@media (max-width:575.98px) {
+    .btn-outline-white {
+        border: 0
+    }
+    .navbar-nav {
+        margin-right: auto !important;
+    }
+}
+
+@media (min-width:575.98px) {
+    .button-send-cv {
+        margin-left: 200px;
+    }
+}
