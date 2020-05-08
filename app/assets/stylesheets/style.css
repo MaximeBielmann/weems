@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
+
 .site-navbar {
   margin-bottom: 0px;
   z-index: 1999;
@@ -476,14 +477,15 @@ h1, h2, h3, h4 {
     border: none;
     display: inline-block;
     position: absolute;
-    content: "\e313";
+    content: "\f0dd";
+    font-weight: 900;
     font-size: 16px;
     top: 50%;
     right: 10px;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    font-family: 'icomoon'; }
+    font-family: "Font Awesome 5 Free"; }
   .home-section .search-jobs-form .filter-option.dropup {
     border: 1px solid red !important; }
     .home-section .search-jobs-form .filter-option.dropup:after {
@@ -994,7 +996,7 @@ h1, h2, h3, h4 {
 
 .block__62849 .block__16443 {
   background: #fff;
-  padding: 30px;
+  padding: 10px;
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
@@ -1038,9 +1040,11 @@ h1, h2, h3, h4 {
     -webkit-transition: 0.3s all cubic-bezier(0.66, 0.2, 0.48, 0.9);
     -o-transition: 0.3s all cubic-bezier(0.66, 0.2, 0.48, 0.9);
     transition: 0.3s all cubic-bezier(0.66, 0.2, 0.48, 0.9); }
-  .block__62849 .block__16443 h3 {
+  .block__62849 h3 {
+    font-size: 1.2rem; }
+  .block__16443 h3 {
     font-size: 1.2rem;
-    margin-bottom: 1.2rem; }
+    margin-top: 1.2rem; }
   .block__62849 .block__16443 p {
     color: #7f848c; }
   .block__62849 .block__16443:hover {
