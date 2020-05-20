@@ -33,7 +33,7 @@
                     <a class="nav-link" href="/jobs">Emplois</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
+                    <a class="nav-link" href="/contacts">Contact</a>
                   </li>
                   <% if current_user && current_user.admin %>
         					  <li class="nav-item">
@@ -65,15 +65,15 @@
           <div class="col-12 col-md-4 mb-4 mb-md-0">
             <h3>Candidats</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Emplois</a></li>
-              <li><a href="#">Envoyer un CV</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="/jobs">Emplois</a></li>
+              <li><a href="/send-cv">Envoyer un CV</a></li>
+              <li><a href="/contacts">Contact</a></li>
             </ul>
           </div>
           <div class="col-12 col-md-4 mb-4 mb-md-0">
             <h3>Entreprises</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Contact</a></li>
+              <li><a href="/contacts">Contact</a></li>
             </ul>
           </div>
         </div>
