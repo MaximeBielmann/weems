@@ -18,6 +18,11 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'bootstrap', '~> 4.4.1'
 
+gem 'devise'
+
+gem 'devise-bootstrap-views', '~> 1.0'
+
+gem 'kaminari'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,0 +1,82 @@
+<% if current_user && current_user.admin %>
+
+<section class="section-hero overlay inner-page bg-image" style="background-image: url(<%= asset_path 'background_header.png' %>)" id="home-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1 class="text-white font-weight-bold">Espace administrateur</h1>
+            <div class="custom-breadcrumbs">
+              <a href="/">Accueil</a> <span class="mx-2 slash">/</span>
+              <span class="text-white"><strong>Espace administrateur</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section" id="next-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h2>Ajouter une offre d'emploi</h2>
+            <%= form_with(url: "/jobs", method: "post") do |f| %>
+              <div class="form-group">
+                  <%= label_tag("Intitulé de l'emploi") %>
+                  <%= f.text_field :job_title, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                  <%= label_tag("Catégorie de l'emploi") %>
+                  <%= select_tag(:job_category, options_for_select([['VRD', 'VRD'], ['HVAC', 'HVAC'], ['Promotion immobilière', 'Promotion immobilière'], ["Ouvrage d'arts", "Ouvrage d'arts"], ['Construction générale', 'Construction générale'], ['Structures', 'Structures']]), class: "form-control") %>
+              </div>
+              <div class="form-group">
+                  <%= label_tag("Pays") %>
+                  <%= select_tag(:job_country, options_for_select([['France', 'France'], ['Belgique', 'Belgique'], ['Luxembourg', 'Luxembourg'], ['Suisse', 'Suisse']]), class: "form-control") %>
+              </div>
+              <div class="form-group">
+                  <%= label_tag("Ville") %>
+                  <%= f.text_field :job_city, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                  <%= label_tag("Salaire annuelle") %>
+                  <%= f.text_field :job_salary, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                  <%= label_tag("Description") %>
+                  <%= f.text_area :job_description, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                  <%= submit_tag("Ajouter", class: "btn btn-primary") %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+        					  
+<% else %>       
+
+<section class="section-hero overlay inner-page bg-image" style="background-image: url(<%= asset_path 'background_header.png' %>)" id="home-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1 class="text-white font-weight-bold">Admin</h1>
+            <div class="custom-breadcrumbs">
+              <a href="/">Accueil</a> <span class="mx-2 slash">/</span>
+              <span class="text-white"><strong>Admin</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section" id="next-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h2>Oups, il n'y a rien ici.</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+                    
+<% end %>

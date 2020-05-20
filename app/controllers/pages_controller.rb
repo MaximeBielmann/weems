@@ -10,4 +10,7 @@ class PagesController < ApplicationController
   
   def sendcv
   end
+  
+  def admin
+  end
 end
