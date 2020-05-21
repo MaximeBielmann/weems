@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  require 'mailgun'
+  
   def new
     @contact = Contact.new
   end
