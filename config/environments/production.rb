@@ -85,10 +85,13 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    :api_key => ENV["MAILGUN_PUBLIC_KEY"],
-    :domain => ENV["MAILGUN_DOMAIN"],
-    :api_host => "api.mailgun.net"
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => 'weems-builder.herokuapp.com', #eg: 'yourappname.herokuapp.com'
+    :authentication => :plain,
   }
 end
