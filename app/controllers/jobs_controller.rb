@@ -31,6 +31,10 @@ class JobsController < ApplicationController
                       job_description: params[:job_description]
     redirect_to "/jobs/#{params[:id]}"
   end
+  
+  def apply
+    @job = Job.find(params[:id])
+  end
 
   def destroy
     Job.find(params[:id]).destroy

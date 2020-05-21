@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get "jobs/:id/change" => "jobs#change"
   patch "jobs/:id" => "jobs#update"
   delete "jobs/:id" => "jobs#destroy"
+  get "jobs/:id/apply" => "jobs#apply"
 end
