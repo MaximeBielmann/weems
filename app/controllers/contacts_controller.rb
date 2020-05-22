@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  require 'mailgun'
+  require 'mailgun-ruby'
   
   def new
     @contact = Contact.new

@@ -28,8 +28,6 @@ gem 'simple_form'
 
 gem 'mail_form'
 
-gem 'mailgun-ruby', '~>1.1.6'
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
