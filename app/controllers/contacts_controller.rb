@@ -1,6 +1,4 @@
 class ContactsController < ApplicationController
-  require 'mailgun-ruby'
-  
   def new
     @contact = Contact.new
   end
