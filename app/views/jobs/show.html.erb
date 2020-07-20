@@ -22,8 +22,8 @@
               <div>
                 <h2><%= @job.job_title %></h2>
                 <div>
-                  <span class="ml-0 mr-2 mb-2"><i class="fas fa-map-marker-alt mr-2"></i><%= @job.job_city %>, <%= @job.job_country %></span>
-                  <span class="m-2"><i class="fas fa-tags mr-2"></i><span class="text-primary"><%= @job.job_category %></span></span>
+                  <span class="ml-0 mr-2 mb-2"><i class="fas fa-map-marker-alt mr-2"></i><%= @job.job_city %>, <%= @job.country.country_title %></span>
+                  <span class="m-2"><i class="fas fa-tags mr-2"></i><span class="text-primary"><%= @job.category.category_title %></span></span>
                 </div>
               </div>
             </div>
@@ -48,7 +48,6 @@
                 <a href="/jobs/<%= @job.id %>/apply" class="btn btn-block btn-primary btn-md">Envoyer mon CV</a>
               </div>
             </div>
-
           </div>
           
           <div class="col-lg-4">
@@ -56,8 +55,8 @@
               <h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">Résumé</h3>
               <ul class="list-unstyled pl-3 mb-0">
                 <li class="mb-2"><strong class="text-black">Publié le :</strong> <%= @job.job_publish_date.strftime("%d/%m/%Y") %></li>
-                <li class="mb-2"><strong class="text-black">Catégorie :</strong> <%= @job.job_category %></li>
-                <li class="mb-2"><strong class="text-black">Localisation :</strong> <%= @job.job_city %>, <%= @job.job_country %></li>
+                <li class="mb-2"><strong class="text-black">Catégorie :</strong> <%= @job.category.category_title %></li>
+                <li class="mb-2"><strong class="text-black">Localisation :</strong> <%= @job.job_city %>, <%= @job.country.country_title %></li>
                 <li class="mb-2"><strong class="text-black">Salaire annuel :</strong> <%= @job.job_salary %>€</li>
               </ul>
             </div>

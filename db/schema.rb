@@ -10,16 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_12_083154) do
+ActiveRecord::Schema.define(version: 2020_07_06_071541) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category_title"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "country_title"
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.string "job_title", null: false
-    t.string "job_category", null: false
-    t.string "job_country", null: false
     t.string "job_city"
     t.datetime "job_publish_date"
     t.integer "job_salary"
     t.text "job_description"
+    t.integer "category_id"
+    t.integer "country_id"
   end
 
   create_table "users", force: :cascade do |t|

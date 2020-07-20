@@ -26,11 +26,11 @@
               </div>
               <div class="form-group">
                   <%= label_tag("Catégorie de l'emploi") %>
-                  <%= select_tag(:job_category, options_for_select([['VRD', 'VRD'], ['HVAC', 'HVAC'], ['Promotion immobilière', 'Promotion immobilière'], ["Ouvrage d'arts", "Ouvrage d'arts"], ['Construction générale', 'Construction générale'], ['Structures', 'Structures']]), class: "form-control") %>
+                  <%= select_tag(:category_id, options_for_select(Category.all.map { |category| [category.category_title, category.id] }), class: "form-control") %>
               </div>
               <div class="form-group">
                   <%= label_tag("Pays") %>
-                  <%= select_tag(:job_country, options_for_select([['France', 'France'], ['Belgique', 'Belgique'], ['Luxembourg', 'Luxembourg'], ['Suisse', 'Suisse']]), class: "form-control") %>
+                  <%= select_tag(:country_id, options_for_select(Country.all.map { |country| [country.country_title, country.id] }), class: "form-control") %>
               </div>
               <div class="form-group">
                   <%= label_tag("Ville") %>

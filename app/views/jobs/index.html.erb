@@ -15,6 +15,19 @@
     
     <section class="site-section" id="next">
       <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <% if notice %>
+              <div class="alert alert-success text-center" role="alert">
+                <%= notice %>
+              </div>
+              <% elsif alert %>
+              <div class="alert alert-danger text-center" role="alert">
+                <%= alert %>
+              </div>
+              <% end %>
+            </div>
+      </div> 
 
         <div class="row mb-5 justify-content-center">
           <div class="col-md-7 text-center">
@@ -22,47 +35,67 @@
           </div>
         </div>
         
-        <ul class="job-listings mb-5">
-          <% @jobs.each do |job| %>
-          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-            <a href="/jobs/<%= job.id %>"></a>
-            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                <h2><%= job.job_title %></h2>
-                <strong><%= job.job_category %></strong>
-              </div>
-              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                <span class="fas fa-map-marker-alt"></span> <%= job.job_city %>, <%= job.job_country %>
-              </div>
-              <div class="job-listing-meta">
-                <span class="badge badge-success"><%= job.job_publish_date.strftime("Publié le %d/%m/%Y") %></span>
-              </div>
-            </div>
-          </li>
-          <% end %>
-        </ul>
-
         <div class="row">
-          <div class="col-md-12 text-center">
-              
-              <%= paginate @jobs, pagination_class: "pagination-sm" %>
-              <!--
-              <a href="#" class="prev"><i class="fas fa-arrow-left"></i></a>
-              <div class="d-inline-block">
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
+          <div class="col-md-4">
+            <%= form_for_filterrific @filterrific do |f| %>
+              <div class="form-group">
+                <%= label_tag("Recherche") %>
+                <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+                <%= f.text_field(
+                  :search_query,
+                  class: 'filterrific-periodically-observed form-control'
+                ) %>
               </div>
-              <a href="#" class="next"><i class="fas fa-arrow-right"></i></a>
-              -->
+              <div class="form-group">
+                <%= label_tag("Localisation") %>
+                <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+                <%= f.text_field(
+                  :search_city_query,
+                  class: 'filterrific-periodically-observed form-control'
+                ) %>
+              </div>
+              <div class="form-group">
+                <%= label_tag("Catégorie") %>
+                <%= f.select(
+                  :with_category_id,
+                  @filterrific.select_options[:with_category_id],
+                  { include_blank: '- Tous -' }, 
+                  class: "form-control"
+                ) %>
+              </div>
+              <div class="form-group">
+                Pays
+                <%= f.select(
+                  :with_country_id,
+                  @filterrific.select_options[:with_country_id],
+                  { include_blank: '- Tous -' }, 
+                  class: "form-control"
+                ) %>
+              </div>
+              <div>
+                <%= link_to(
+                  'Réinitialiser',
+                  reset_filterrific_url,
+                ) %>
+              </div>
+              <%# add an automated spinner to your form when the list is refreshed %>
+              <%= render_filterrific_spinner %>
+            <% end %>
+
+          </div>
+          <div class="col-md-8">
+            <%= render(
+              partial: 'jobs/list',
+              locals: { jobs: @jobs }
+            ) %>
           </div>
         </div>
+        
 
       </div>
     </section>
 
-    <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_1.jpg');">
+    <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url(<%= asset_path 'background_header.png' %>)">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-8">

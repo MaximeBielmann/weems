@@ -1,0 +1,25 @@
+<div id="filterrific_results">
+
+  <div>
+  </div>
+
+  <ul class="job-listings mb-5">
+          <% @jobs.each do |job| %>
+          <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+            <a href="/jobs/<%= job.id %>"></a>
+            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+              <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                <h2><%= job.job_title %></h2>
+                <strong><%= job.category.category_title %></strong>
+              </div>
+              <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
+                <span class="fas fa-map-marker-alt"></span> <%= job.job_city %>, <%= job.country.country_title %>
+              </div>
+              <div class="job-listing-meta">
+                <span class="badge badge-success"><%= job.job_publish_date.strftime("Publié le %d/%m/%Y") %></span>
+              </div>
+            </div>
+          </li>
+          <% end %>
+  </ul>
+</div>

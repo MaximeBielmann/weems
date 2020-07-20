@@ -21,6 +21,7 @@
 //= jquery.fancybox.min
 //= jquery.waypoints.min
 //= owl.carousel.min
+//= require filterrific/filterrific-jquery
 //= quill.min
 //= stickyfill.min
 //= require_tree .

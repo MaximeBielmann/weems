@@ -79,7 +79,7 @@
           <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
             
             <a href="#" class="block__16443 text-center d-block">
-              <%= image_tag "categorie-promotion-immobiliere.png", class: 'img-fluid' %>
+              <%= image_tag "categorie-promotion-immobiliere2.png", class: 'img-fluid' %>
               <h3>Promotion immobilière</h3>
             </a>            
 
@@ -114,7 +114,7 @@
       </div>
     </section>
     
-    <section class="site-section pb-0">
+    <section class="site-section">
       <div class="container">
        
         
@@ -130,6 +130,30 @@
             <p>Weems & Associates Construction est un cabinet de recrutement intervenant sur les métiers de la construction dans la zone Benelux.</p>
             <p>Notre objectif principal est d’offrir à nos clients un service de qualité, répondant à leurs besoins en recrutement. La finalité étant de développer une relation pérenne avec nos partenaires.</p>
           </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="site-section">
+      <div class="container">
+        
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-7 text-center">
+            <h2 class="section-title mb-2">Dernières annonces</h2>
+          </div>
+        </div>
+        
+        <div class="row mb-5">
+          <% @jobs.each do |job| %>
+            <div class="col-md-6 col-lg-4 mb-2 border job-feature">
+              <h3 class="text-black mb-2"><%= job.job_title %></h3>
+              <div class="mb-5 line-job-feature"> </div>
+              <div class="mb-2"><span class="text-black">Catégorie :</span> <%= job.category.category_title %></div>
+              <div class="mb-2"><span class="text-black">Salaire :</span> <%= job.job_salary %>€</div>
+              <div class="mb-5"><span class="text-black">Localisation :</span> <%= job.job_city %>, <%= job.country.country_title %></div>
+              <a href="/jobs/<%= job.id %>" class="btn btn-primary btn-block">En savoir plus</a>
+            </div>
+          <% end %>
         </div>
       </div>
     </section>

@@ -2,17 +2,15 @@
     background-color: #fff !important;
 }
 .btn.btn-outline-white {
-    background: transparent;
-    border-width: 2px;
-    border-color: #7f848c;
-    color: #7f848c;
+    background: #89ba16;
+    color: white !important;
 }
 
 .btn.btn-outline-white:hover {
     background: transparent;
     border-width: 2px;
     border-color: #89ba16;
-    color: #89ba16;
+    color: #89ba16 !important;
 }
 
 .btn-admin {
@@ -64,4 +62,13 @@ background-color: #dff0d8;
 border-color: #d6e9c6;
 color: #468847;
 text-align: left;
+}
+
+.job-feature {
+    padding: 30px 30px 30px 30px;
+    margin: 0 20px 0 20px;
+}
+
+.line-job-feature {
+    border-top: 2px solid #89ba16;
 }
