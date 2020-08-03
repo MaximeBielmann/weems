@@ -57,7 +57,7 @@ class JobsController < ApplicationController
   end
   
   def update
-    @job = Job.update job_title: params[:job_title], 
+    @job = Job.find(params[:id]).update job_title: params[:job_title], 
                       category_id: params[:category_id],
                       country_id: params[:country_id],
                       job_city: params[:job_city],
